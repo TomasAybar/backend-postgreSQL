@@ -9,6 +9,14 @@ const pool = new Pool({
     port: '5432'
 })
 
+const poolProductos = new Pool({
+    host: 'localhost',
+    user: 'postgres',
+    password: 'sanignacio',
+    database: 'productos',
+    port: '5432'
+})
+
 const userControllers = {
     getUsers: async (req, res) => {
 
@@ -89,7 +97,22 @@ const userControllers = {
             error: error
         })
 
-    }
+    },
+
+    likeProduct: async (req, res) => {
+        const id = req.params.id
+        const user = req.body
+
+
+
+    },
+
+    get: async (req, res) => {
+
+        const response = await pool.query('SELECT * FROM users')
+
+        res.json(response.rows)
+    },
 
 }
 

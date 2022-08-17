@@ -7,7 +7,7 @@ const app = express()
 const Router = require('./routes/routes')
 
 // middlewares
-app.use(express.json()) // cuando envien desde el cliente un archivo en json, el sv es capaz de entenderlo
+app.use(express.json())
 app.use(Router)
 
 
